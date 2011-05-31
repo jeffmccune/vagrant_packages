@@ -28,7 +28,7 @@ Vagrant::Config.run do |config|
   config.vm.define :lucid do |node|
     node.vm.box = "lucid64"
     node.vm.box_url = "#{url}/#{box}.box"
-    # node.vm.provision :shell, :path => 'shell/puppet100'
+    node.vm.provision :shell, :path => 'shell/lucid'
     node.vm.provision :puppet do |puppet|
       puppet.options        = "-v --vardir=/var/lib/puppet --ssldir=/var/lib/puppet/ssl"
       puppet.module_path    = "modules"
